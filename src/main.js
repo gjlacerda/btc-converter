@@ -1,3 +1,8 @@
 #!/usr/bin/env node
 
-console.log('hello world!');
+const pkg = require('../package.json');
+
+const app = require('commander');
+app
+    .version(pkg.version)
+    .parse(process.argv);
