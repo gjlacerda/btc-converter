@@ -13,4 +13,14 @@ describe('main CLI', () => {
             done();
         });
     });
+
+    it('should return the description when node-btc-converter --help', (done) => {
+        exec(`${btcConverter} --help`, (err, stdout, stderr) => {
+            if (err) {
+                throw err;
+            }
+            expect(stdout.includes('Convert Bitcoin to any currency defined.')).to.be.true;
+            done();
+        });
+    });
 });
