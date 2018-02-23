@@ -58,6 +58,7 @@
   },
   "dependencies": {
     "commander": "^2.14.1",
+    "ora": "^2.0.0",
     "request": "^2.83.0"
   }
 }
