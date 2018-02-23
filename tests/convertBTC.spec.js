@@ -4,6 +4,7 @@ const convertBTC = require('../src/convertBTC');
 const sinon = require('sinon');
 const sinonChai = require('sinon-chai');
 const nock = require('nock');
+const chalk = require('chalk');
 
 chai.use(sinonChai);
 
@@ -37,7 +38,7 @@ describe('convertBTC', () => {
         convertBTC();
 
         setTimeout(() => {
-            expect(consoleStub).to.have.been.calledWith('1 BTC to USD = 22213.54');
+            expect(consoleStub).to.have.been.calledWith(`${chalk.red(1)} BTC to ${chalk.cyan('USD')} = ${chalk.yellow(22213.54)}`);
             done();
         }, 300);
     });
@@ -55,7 +56,7 @@ describe('convertBTC', () => {
         convertBTC('USD', 10);
 
         setTimeout(() => {
-            expect(consoleStub).to.have.been.calledWith('10 BTC to USD = 22213.54');
+            expect(consoleStub).to.have.been.calledWith(`${chalk.red(10)} BTC to ${chalk.cyan('USD')} = ${chalk.yellow(22213.54)}`);
             done();
         }, 300);
     });
@@ -73,7 +74,7 @@ describe('convertBTC', () => {
         convertBTC('BRL');
 
         setTimeout(() => {
-            expect(consoleStub).to.have.been.calledWith('1 BTC to BRL = 22213.54');
+            expect(consoleStub).to.have.been.calledWith(`${chalk.red(1)} BTC to ${chalk.cyan('BRL')} = ${chalk.yellow(22213.54)}`);
             done();
         }, 300);
     });
@@ -91,7 +92,7 @@ describe('convertBTC', () => {
         convertBTC('BRL');
 
         setTimeout(() => {
-            expect(consoleStub).to.have.been.calledWith('1 BTC to BRL = 22213.54');
+            expect(consoleStub).to.have.been.calledWith(`${chalk.red(1)} BTC to ${chalk.cyan('BRL')} = ${chalk.yellow(22213.54)}`);
             done();
         }, 300);
     });
@@ -109,7 +110,7 @@ describe('convertBTC', () => {
         convertBTC('BRL');
 
         setTimeout(() => {
-            expect(consoleStub).to.have.been.calledWith('Something wrong.');
+            expect(consoleStub).to.have.been.calledWith(chalk.red('Something wrong.'));
             done();
         }, 300);
     });
