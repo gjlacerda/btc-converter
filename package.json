@@ -1,6 +1,6 @@
 {
   "name": "node-btc-converter",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "A CLI to convert bitcoin to any currency provided.",
   "main": "index.js",
   "scripts": {
@@ -57,6 +57,7 @@
     "sinon-chai": "^2.14.0"
   },
   "dependencies": {
+    "chalk": "^2.3.1",
     "commander": "^2.14.1",
     "request": "^2.83.0"
   }
